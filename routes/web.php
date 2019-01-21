@@ -11,6 +11,15 @@
 |
 */
 
+//khi ma truy cap vao trang web goc domain thi vao thang view welcome ma khong di qua controller/action
 Route::get('/', function () {
-    return view('welcome');
+    $data = [
+        'name' => 'Samantha',
+        'foods' => ['banh my', 'com chien', 'pho', 'my goi']
+    ];
+    return view('welcome',$data);
 });
+
+
+Route::get('/Product/get_all','ProductController@get_all');
+Route::get('/blog/all','BlogController@fn_all');
