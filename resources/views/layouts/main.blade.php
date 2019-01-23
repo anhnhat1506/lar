@@ -1,15 +1,15 @@
 <html>
 <head>
     <title>App Name - @yield('title')</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
     @yield('style')
 </head>
 <body>
-@section('sidebar')
-    This is the master sidebzzar.
-@show
-
+@include('Includes.nav')
 <div class="container">
     @yield('content')
 </div>
+@include('Includes.footer')
 </body>
 </html>

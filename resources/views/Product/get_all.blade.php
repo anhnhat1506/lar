@@ -8,19 +8,20 @@
 @endsection
 @section("content")
         {{-- do khong co autocomplete nen phai tu nho va go tay  --}}
-        <h1>{{$gia_cao_nhat}}</h1>
-        <table>
+        <table class="table table-bordered">
                 <thead>
                         <th>ID</th>
                         <th>Name</th>
                         <th>Main photo</th>
+                        <th>Category id</th>
                 </thead>
                 <tbody>
                 @foreach ($products as $key => $value)
                         <tr>
                                 <td>{{$value->product_id}}</td>
-                                <td>{{$value->name}}</td>
-                                <td><img src="http://localhost:81/tmdt/{{$value->main_photo}}"/></td>
+                                <td><a href="{{ url('product/detail/'.$value->product_id) }}">{{$value->name}}</a></td>
+                                <td><img src="{{ url($value->main_photo) }}"/></td>
+                                <td>{{$value->category_id}}</td>
                         </tr>
                 @endforeach
                 </tbody>

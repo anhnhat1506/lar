@@ -21,5 +21,16 @@ Route::get('/', function () {
 });
 
 
-Route::get('/Product/get_all','ProductController@get_all');
+Route::get('/product/get_all','ProductController@get_all');
 Route::get('/blog/all','BlogController@fn_all');
+
+//product detail
+Route::get('/product/detail/{product_id?}','ProductController@detail');
+//category
+Route::get('/category/get_cate','CategoryController@get_cate');
+Route::get('/category/detail/{category_id?}','CategoryController@detail');
+//brand
+Route::get('/brand/get_brand','BrandController@get_brand');
+Route::get('/brand/detail/{brand_id?}','BrandController@detail');
+//demo
+//Route::get('/user/{id?}',);

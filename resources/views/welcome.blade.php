@@ -1,16 +1,6 @@
-<!doctype html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-    </head>
-    <body>
-        <ul>
-            @foreach ($foods as $key => $value)
-                <li>{{ $value }}</li>
-            @endforeach
-        </ul>
-    </body>
-</html>
+@extends("layouts.main")
+@section("content")
+        @foreach ($foods as $key => $value)
+            <li>{{ $value }}</li>
+        @endforeach
+@endsection
