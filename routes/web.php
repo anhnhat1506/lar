@@ -34,3 +34,4 @@ Route::get('/brand/get_brand','BrandController@get_brand');
 Route::get('/brand/detail/{brand_id?}','BrandController@detail');
 //demo
 //Route::get('/user/{id?}',);
+//
