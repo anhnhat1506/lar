@@ -17,6 +17,8 @@
                 <li><a href="{{ url('product/get_all') }}">Product</a></li>
                 <li><a href="{{ url('category/get_cate') }}">Category</a></li>
                 <li><a href="{{ url('brand/get_brand') }}">Brand</a></li>
+                <li><a href="{{ url('locale/set/en') }}">en</a></li>
+                <li><a href="{{ url('locale/set/vn') }}">vn</a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">
