@@ -12,13 +12,11 @@
 */
 
 //khi ma truy cap vao trang web goc domain thi vao thang view welcome ma khong di qua controller/action
-Route::get('/', function () {
-    $data = [
-        'name' => 'Samantha',
-        'foods' => ['banh my', 'com chien', 'pho', 'my goi']
-    ];
-    return view('welcome',$data);
-});
+Route::get('/', 'HomeController@index');
+Route::get('/home/session', 'HomeController@session');
+Route::get('/home/set_user/{user_id}/{email}', 'HomeController@set_user');
+Route::get('/home/set_user2', 'HomeController@set_user2');
+Route::get('/home/clear_user', 'HomeController@clear_user');
 
 
 Route::get('product/get_all','ProductController@get_all');
