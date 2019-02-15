@@ -46,7 +46,11 @@ Route::post('hocsinh/add','HocSinhController@add_proccess');
 //xu ly du lieu them post len
 Route::get('sinhvien/add', 'SinhVienController@add');
 Route::post('sinhvien/add', 'SinhVienController@add_proccess');
-
+//xu ly dang ky thanh vien
+Route::get('thanhvien/dang_ky','ThanhVienController@dang_ky');
+Route::post('thanhvien/dang_ky','ThanhVienController@dang_ky_proccess');
+//
+Route::get('text/add','TextController@khac_nhau');
 
 //thay doi ngon ngu mac dinh
 Route::get('locale/set/{lang_code}','LocaleController@set');
