@@ -68,3 +68,14 @@ Route::post('caphe/update','CaPheController@update');
 Route::post('caphe/delete','CaPheController@delete');
 
 
+//Sach
+//show ra tất cả sách đang có trong csdl
+Route::get('book/all','BookController@all');
+//thêm sách mới
+Route::get('book/add','BookController@add');
+Route::post('book/insert','BookController@insert');
+//chỉnh sửa sp
+Route::get('book/edit/{id}','BookController@edit');
+Route::post('book/update','BookController@update');
+//xóa sản phẩm
+Route::post('book/delete','BookController@delete');

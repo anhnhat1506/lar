@@ -50,6 +50,6 @@ class CaPheController extends Controller
     public function delete(Request $request){
         $sp_cf=CaPhe::find($request->get("id"));
         $sp_cf->delete();
-        return redirect('caphe/all');
+               return redirect('caphe/all');
     }
 }
