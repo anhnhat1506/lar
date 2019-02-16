@@ -1,31 +1,34 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
-
+use App\Http\Requests\DangKyThanhVienRequest;
+//1. khai vao thu vien validator
+//use Illuminate\Support\Facades\Validator;
+use Validator;
 class ThanhVienController extends Controller
 {
     //
     public function dang_ky(){
         return View('ThanhVien.dang_ky');
     }
+    //Request $request la gia tri form gui len
     public function dang_ky_proccess(Request $request){
-        $user_name = $request->get('user_name');
-        $first_name = $request->get('first_name');
-        $last_name = $request->get('last_name');
-        $password = $request->get('password');
-        $confirm_p = $request->get('confirm_p');
-        $email = $request->get('email');
-        $gioi_tinh = $request->get('gioi_tinh');
-        $accept_term = $request->get('accept_term');
-        var_dump($user_name);
-        var_dump($first_name);
-        var_dump($last_name);
-        var_dump($password);
-        var_dump($confirm_p);
-        var_dump($email);
-        var_dump($gioi_tinh);
-        var_dump($accept_term);
+        //tạo một mẫu validation cho Request
+        $rules = [
+            'email' => 'required|email|max:255', //bat buoc, phai la email, do dai toi da 2
+        ];
+        $validator = Validator::make($request->all(),$rules);
+        //kiểm tra nếu form nhập không hợp lệ
+        if ($validator->fails()) {
+            //redirect()->back() trở về trang form gửi trước
+            //->withErrors($validator) kèm theo mảng lỗi $errors 
+            //->withInput() gửi kèm form đã nhập trước đó gửi lên
+            return redirect()->back()->withErrors($validator)->withInput();
+        }else{
+            //trường hợp hợp lệ
+            //với thao tác đăng ký thì bước tiếp theo có thể là lưu vào csdl sau đó redirect về trang chủ
+            dd($request->all());
+        }
     }
 }

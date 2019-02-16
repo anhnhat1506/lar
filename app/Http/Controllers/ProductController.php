@@ -19,6 +19,7 @@ class ProductController extends Controller
 
     //action detail
     function detail($product_id=0){
+        //database qiuery
         $product = DB::select('select * from product where product_id=?',[$product_id]); //tra ve  1 mang
         $data = [
             'product' => $product[0], //lay ra san pham dau tien

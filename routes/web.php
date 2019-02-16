@@ -13,11 +13,11 @@
 
 //khi ma truy cap vao trang web goc domain thi vao thang view welcome ma khong di qua controller/action
 Route::get('/', 'HomeController@index');
-Route::get('/home/session', 'HomeController@session');
-Route::get('/home/set_user/{user_id}/{email}', 'HomeController@set_user');
-Route::get('/home/set_user2', 'HomeController@set_user2');
-Route::get('/home/clear_user', 'HomeController@clear_user');
-
+//Route::get('/home/session', 'HomeController@session');
+//Route::get('/home/set_user/{user_id}/{email}', 'HomeController@set_user');
+//Route::get('/home/set_user2', 'HomeController@set_user2');
+//Route::get('/home/clear_user', 'HomeController@clear_user');
+Route::get('/home/set_up_session','HomeController@set_up_session');
 
 Route::get('product/get_all','ProductController@get_all');
 Route::get('blog/all','BlogController@fn_all');
@@ -46,9 +46,25 @@ Route::get('sinhvien/add', 'SinhVienController@add');
 Route::post('sinhvien/add', 'SinhVienController@add_proccess');
 //xu ly dang ky thanh vien
 Route::get('thanhvien/dang_ky','ThanhVienController@dang_ky');
-Route::post('thanhvien/dang_ky','ThanhVienController@dang_ky_proccess');
+Route::post('thanhvien/dang_ky_proccess','ThanhVienController@dang_ky_proccess');
 //
 Route::get('text/add','TextController@khac_nhau');
 
 //thay doi ngon ngu mac dinh
 Route::get('locale/set/{lang_code}','LocaleController@set');
+
+//san pham
+Route::get('sanpham/all','SanPhamController@all');
+Route::get('sanpham/insert','SanPhamController@insert');
+Route::get('sanpham/delete/{id}','SanPhamController@delete');
+Route::get('sanpham/update/{id}','SanPhamController@update');
+//san pham cf
+Route::get('caphe/all','CaPheController@all');
+Route::get('caphe/add','CaPheController@add');
+Route::post('caphe/insert','CaPheController@insert');
+//edit
+Route::get('caphe/edit/{id}','CaPheController@edit');
+Route::post('caphe/update','CaPheController@update');
+Route::post('caphe/delete','CaPheController@delete');
+
+

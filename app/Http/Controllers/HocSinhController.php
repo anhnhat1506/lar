@@ -18,5 +18,6 @@ class HocSinhController extends Controller
         $ten_hoc_sinh = $request->get('ten_hoc_sinh');
         var_dump($ten_hoc_sinh);
     }
+       
 
 }
