@@ -79,3 +79,21 @@ Route::get('book/edit/{id}','BookController@edit');
 Route::post('book/update','BookController@update');
 //xóa sản phẩm
 Route::post('book/delete','BookController@delete');
+//Chuyen bay
+Route::get('chuyenbay/all','ChuyenBayController@all');
+//them chuyen bay
+Route::get('chuyenbay/add','ChuyenBayController@add');
+Route::post('chuyenbay/insert','ChuyenBayController@insert');
+//sua thong tin chuyen bay
+Route::get('chuyenbay/edit/{id}','ChuyenBayController@edit');
+Route::post('chuyenbay/update','ChuyenBayController@update');
+//xoa thong tin chuyen bay
+Route::post('chuyenbay/delete','ChuyenBayController@delete');
+
+//ds nguoi choi danh bai
+Route::get('danhbai/all','DanhBaiController@all');
+Route::get('danhbai/add','DanhBaiController@add');
+Route::post('danhbai/insert','DanhBaiController@insert');
+Route::get('danhbai/edit/{id}','DanhBaiController@edit');
+Route::post('danhbai/update','DanhBaiController@update');
+Route::post('danhbai/delete','DanhBaiController@delete');
