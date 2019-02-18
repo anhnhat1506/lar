@@ -97,3 +97,10 @@ Route::post('danhbai/insert','DanhBaiController@insert');
 Route::get('danhbai/edit/{id}','DanhBaiController@edit');
 Route::post('danhbai/update','DanhBaiController@update');
 Route::post('danhbai/delete','DanhBaiController@delete');
+///ds ban gai cu
+Route::get('bangai/all','BanGaiController@all');
+Route::get('bangai/add','BanGaiController@add');
+Route::post('bangai/insert','BanGaiController@insert');
+Route::get('bangai/edit/{id}','BanGaiController@edit');
+Route::post('bangai/update','BanGaiController@update');
+Route::post('bangai/delete','BanGaiController@delete');
