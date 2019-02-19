@@ -104,3 +104,14 @@ Route::post('bangai/insert','BanGaiController@insert');
 Route::get('bangai/edit/{id}','BanGaiController@edit');
 Route::post('bangai/update','BanGaiController@update');
 Route::post('bangai/delete','BanGaiController@delete');
+
+
+//post
+Route::get('post/all','PostController@all');
+Route::get('post/insert_comment','PostController@insert_comment');
+Route::get('post/insert_comment2','PostController@insert_comment2');
+Route::get('post/insert_post_and_comments','PostController@insert_post_and_comments');
+Route::get('post/add/{id}','PostController@add');
+//Route::post('post/insert','PostController@insert');
+Route::post('post/save_comment','PostController@save_comment');
+
