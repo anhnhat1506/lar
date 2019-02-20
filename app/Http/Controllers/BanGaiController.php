@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\BanGai;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 class BanGaiController extends Controller
 {
     //
@@ -19,6 +20,19 @@ class BanGaiController extends Controller
         return View('BanGai.add');
     }
     public function insert(Request $request){
+        $input = $request->all();
+        $rules = [
+            'ten_ban_gai' => 'required|min:5|max:100',
+            'chi_phi_cua' => 'required|min:5|max:100',
+            'cam_giac' => 'required|min:5|max:1000'
+        ];
+        $messages = [
+            'required' => 'Vui lòng nhập vào \':attribute\''
+        ];
+        $validator = validator::make($input, $rules, $messages);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
         $ban_gai = new BanGai();
         $ban_gai->ten_ban_gai = $request->get("ten_ban_gai");
         $ban_gai->chi_phi_cua = $request->get("chi_phi_cua");

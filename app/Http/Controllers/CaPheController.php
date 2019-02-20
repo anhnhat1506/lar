@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\CaPhe;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 class CaPheController extends Controller
 {
     //
@@ -21,6 +22,19 @@ class CaPheController extends Controller
     }
     //post
     public function insert(Request $request){
+        $input = $request->all();
+        $rules = [
+            'ten_ca_phe'=>'required|min:5|max:100',
+            'gia_ban'=>'required|min:5|max:100',
+            'mo_ta'=>'required|min:5|max:100',
+        ];
+        $messages = [
+            'required'=> 'Please input :attribute'
+        ];
+        $validator = validator::make($input, $rules, $messages);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
         $cf = new CaPhe;
         $cf->ten_ca_phe = $request->get("ten_ca_phe");
         $cf->gia_ban = $request->get("gia_ban");

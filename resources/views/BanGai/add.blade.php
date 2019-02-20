@@ -2,6 +2,13 @@
 @section('content')
     <h1>Them Moi Ban Gai cu</h1>
     <form action="{{ url("bangai/insert") }}" method="POST">
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $messages)
+                    <li>{{ $messages }}</li>
+                @endforeach
+            </ul>
+        @endif
         @csrf
         <div class="form-group">
             <label for="ten_ban_gai">Ten ban gai(*)</label>

@@ -115,3 +115,13 @@ Route::get('post/add/{id}','PostController@add');
 //Route::post('post/insert','PostController@insert');
 Route::post('post/save_comment','PostController@save_comment');
 
+//classroom-studentt
+Route::get('classroom/all','ClassroomController@all');
+Route::get('classroom/add','ClassroomController@add');
+Route::post('classroom/insert_class','ClassroomController@insert_class');
+//add student
+Route::get('classroom/add_student','ClassroomController@add_student');
+Route::post('classroom/add_student_proccess','ClassroomController@add_student_proccess');
+Route::get('classroom/edit/{id}','ClassroomController@edit');
+Route::post('classroom/update_student_proccess','ClassroomController@update_student_proccess');
+

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Book;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Validator;
 class BookController extends Controller
 {
     //
@@ -19,6 +20,19 @@ class BookController extends Controller
         return View('Book.add');
     }
     public function insert(Request $request){
+        $input = $request->all();
+        $rules = [
+            'ten_sach'=> 'required|min:3|max:255',
+            'ten_sach'=> 'required|min:3|max:255',
+            'ten_sach'=> 'required|min:3|max:255',
+        ];
+        $messages = [
+            'required' => 'Please check :attribute',
+        ];
+        $validator = validator::make($input, $rules, $messages);
+        if($validator->fails()){
+            return redirect()->back()->withErrors($validator)->withInput();
+        }
         $sp = new Book();
         $sp->ten_sach = $request->get("ten_sach");
         $sp->gia_ban = $request->get("gia_ban");

@@ -2,6 +2,13 @@
 @section('content')
     <h1>Thêm Mới</h1>
     <form action="{{ url("book/insert") }}" method="POST">
+        @if ($errors->any())
+            <ul>
+                @foreach ($errors->all() as $message)
+                    <li>{{ $message }}</li>  
+                @endforeach
+            </ul>   
+        @endif
         @csrf
         <div class="form-group">
             <label for="ten_sach">Tên Sách(*)</label>

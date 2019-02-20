@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Post;
 use App\Comment;
-
+use Illuminate\Support\Facades\Validator;
 class PostController extends Controller
 {
     public function all(){
@@ -67,13 +67,32 @@ class PostController extends Controller
         return View('Post.add',$data);
     }
     public function save_comment(Request $request){ 
+        //create validation rules
+        $input = $request->all();
+        $rules = [
+            'title'=>'required|min:10|max:100',
+            'content'=>'required|min:10|max:255',
+            'by'=>'required|min:10|max:100',
+        ];
+        $messages = [
+            'required' => 'Vui lòng nhập :attribute',
+        ];
+        $validator = validator::make($input, $rules, $messages);
+        if($validator->fails()){
+            //co nghia la khong hop le
+            //redirect ve ngay lap tuc
+            return redirect()->back()->withErrors($validator)->withInput();
+            //->withErrors($validator): truyen bien $errors xuong view
+            //->withInput() truyen gia tri form hien tai o request xuong view back lai
+        }
+       
         $save_comment= new Comment();      
         $save_comment->title = $request->get("title");
         $save_comment->content = $request->get("content");
         $save_comment->by = $request->get("by");
         $save_comment->post_id = $request->get("post_id");
         $save_comment->save();          
-        return redirect("post/all");
+        return redirect()->back();
 
     }
 }
