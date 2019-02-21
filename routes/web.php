@@ -42,8 +42,7 @@ Route::get('hocsinh/index','HocSinhController@index');
 Route::get('hocsinh/add','HocSinhController@add')->name('form_them_hoc_sinh');
 Route::post('hocsinh/add','HocSinhController@add_proccess');
 //xu ly du lieu them post len
-Route::get('sinhvien/add', 'SinhVienController@add');
-Route::post('sinhvien/add', 'SinhVienController@add_proccess');
+
 //xu ly dang ky thanh vien
 Route::get('thanhvien/dang_ky','ThanhVienController@dang_ky');
 Route::post('thanhvien/dang_ky_proccess','ThanhVienController@dang_ky_proccess');
@@ -125,3 +124,15 @@ Route::post('classroom/add_student_proccess','ClassroomController@add_student_pr
 Route::get('classroom/edit/{id}','ClassroomController@edit');
 Route::post('classroom/update_student_proccess','ClassroomController@update_student_proccess');
 
+//hoc phan'
+Route::get('hocphan/all','HocPhanController@all');
+Route::get('hocphan/add', 'HocPhanController@add');
+Route::post('hocphan/add', 'HocPhanController@add_proccess');
+Route::get('sinhvien/all', 'SinhVienController@all');
+Route::get('sinhvien/add', 'SinhVienController@add');
+Route::post('sinhvien/add', 'SinhVienController@add_proccess');
+Route::get('dangkyhocphan/all','DangKyHocPhanController@all');
+Route::get('dangkyhocphan/add','DangKyHocPhanController@add');
+Route::post('dangkyhocphan/insert','DangKyHocPhanController@insert');
+Route::get('dangkyhocphan/edit/{id}','DangKyHocPhanController@edit');
+Route::post('dangkyhocphan/update','DangKyHocPhanController@update');

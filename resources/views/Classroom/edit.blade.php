@@ -19,7 +19,7 @@
                     @if ($item->id == $student->class_id)
                         <option value="{{ $item->id}} selected">{{ $item->ten_lop }}</option>
                     @else 
-                        <option value="{{ $item->id }}">{{ $item->name }}</option> 
+                        <option value="{{ $item->id }}">{{ $item->ten_lop }}</option> 
                     @endif
                 @endforeach
         </select>          
