@@ -51,8 +51,7 @@ class DangKyHocPhanController extends Controller
     }
     public function update(Request $request){
         $sinh_vien = SinhVien::find($request->get("sinh_vien_id"));
-        $new_hps = HocPhan::find($request->get("hoc_phan_id"));
-        
+        $new_hps = HocPhan::find($request->get("hoc_phan_id"));    
         $sinh_vien->hoc_phans()->detach($sinh_vien->hoc_phans);
         $sinh_vien->hoc_phans()->attach($new_hps);
         return redirect('dangkyhocphan/all');

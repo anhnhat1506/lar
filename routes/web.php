@@ -136,3 +136,14 @@ Route::get('dangkyhocphan/add','DangKyHocPhanController@add');
 Route::post('dangkyhocphan/insert','DangKyHocPhanController@insert');
 Route::get('dangkyhocphan/edit/{id}','DangKyHocPhanController@edit');
 Route::post('dangkyhocphan/update','DangKyHocPhanController@update');
+//sach-nxb
+Route::get('sach/all','SachController@all');
+Route::get('sach/add','SachController@add');
+Route::post('sach/insert','SachController@insert');
+Route::get('nxb/all','NXBController@all');
+Route::get('nxb/add','NXBController@add');
+Route::post('nxb/insert','NXBController@insert');
+Route::get('sach_nxb/all','SachNXBController@all');
+Route::get('sach_nxb/add','SachNXBController@add');
+Route::get('sach_nxb/edit/{id}','SachNXBController@edit');
+Route::post('sach_nxb/update','SachNXBController@update');
