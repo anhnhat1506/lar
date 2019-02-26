@@ -7,9 +7,9 @@
     <table class="table table-bordered">
         <thead>
             <tr>
-                <th>Ten Sach</th>
-                <th>Ten NXB xuat ban</th>
-                <th>Tuy chinh</th>
+                <th class="success">Ten Sach</th>
+                <th class="danger">Ten NXB xuat ban</th>
+                <th class="info">Tuy chinh</th>
             </tr>
         </thead>
         <tbody>
@@ -19,7 +19,7 @@
                 <td>
                     <ol>
                         @foreach ($item->nxbs as $nxb)
-                            <li>{{ $nxb->name }}</li>
+                            <li class="success">{{ $nxb->name }}</li>
                         @endforeach
                     </ol>
                 </td>

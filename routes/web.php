@@ -1,5 +1,5 @@
 <?php
-
+use App\Http\Middleware\CheckAge;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +12,19 @@
 */
 
 //khi ma truy cap vao trang web goc domain thi vao thang view welcome ma khong di qua controller/action
-Route::get('/', 'HomeController@index');
+//Route::get('/', 'HomeController@index');
+//Route::get('admin/profile',function(){})->middleware('auth');
+//Route::get('/',function(){})->middleware('first','second');
+Route::get('/{age}', 'TutorialMiddleWareController@show')->middleware('age');
+Route::view('/', 'welcome');
+//Route::get('locale', function () {
+ //   return \App::getLocale();
+//});
+//Route::get('locale/{locale}', function ($locale) {
+ //   \Session::put('locale', $locale);
+  //  return redirect()->back();
+//});
+//Route:view('/hello','hello');
 //Route::get('/home/session', 'HomeController@session');
 //Route::get('/home/set_user/{user_id}/{email}', 'HomeController@set_user');
 //Route::get('/home/set_user2', 'HomeController@set_user2');
@@ -145,5 +157,8 @@ Route::get('nxb/add','NXBController@add');
 Route::post('nxb/insert','NXBController@insert');
 Route::get('sach_nxb/all','SachNXBController@all');
 Route::get('sach_nxb/add','SachNXBController@add');
+Route::post('sach_nxb/insert','SachNXBController@insert');
 Route::get('sach_nxb/edit/{id}','SachNXBController@edit');
 Route::post('sach_nxb/update','SachNXBController@update');
+Route::get('btmang/tao_chuoi','BTMangController@tao_chuoi');
+Route::get('btmang/chuoi','BTMangController@chuoi');

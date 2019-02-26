@@ -1,6 +1,5 @@
 @extends("layouts.main")
 @section("content")
-        @foreach ($foods as $key => $value)
-            <li>{{ $value }}</li>
-        @endforeach
+        
+        <h1>Middleware in laravel</h1>
 @endsection
