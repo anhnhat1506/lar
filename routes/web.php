@@ -11,24 +11,6 @@ use App\Http\Middleware\CheckAge;
 |
 */
 
-//khi ma truy cap vao trang web goc domain thi vao thang view welcome ma khong di qua controller/action
-//Route::get('/', 'HomeController@index');
-//Route::get('admin/profile',function(){})->middleware('auth');
-//Route::get('/',function(){})->middleware('first','second');
-Route::get('/{age}', 'TutorialMiddleWareController@show')->middleware('age');
-Route::view('/', 'welcome');
-//Route::get('locale', function () {
- //   return \App::getLocale();
-//});
-//Route::get('locale/{locale}', function ($locale) {
- //   \Session::put('locale', $locale);
-  //  return redirect()->back();
-//});
-//Route:view('/hello','hello');
-//Route::get('/home/session', 'HomeController@session');
-//Route::get('/home/set_user/{user_id}/{email}', 'HomeController@set_user');
-//Route::get('/home/set_user2', 'HomeController@set_user2');
-//Route::get('/home/clear_user', 'HomeController@clear_user');
 Route::get('/home/set_up_session','HomeController@set_up_session');
 
 Route::get('product/get_all','ProductController@get_all');
@@ -42,10 +24,7 @@ Route::get('category/detail/{category_id?}','CategoryController@detail');
 //brand
 Route::get('brand/get_brand','BrandController@get_brand');
 Route::get('brand/detail/{brand_id?}','BrandController@detail');
-//demo
-//Route::get('/user/{id?}',);
-//test git //cssssssssssssss
-//j
+
 //-------hoc sinh---------
 //danh sach hoc sinh
 Route::get('hocsinh/index','HocSinhController@index');
@@ -60,9 +39,6 @@ Route::get('thanhvien/dang_ky','ThanhVienController@dang_ky');
 Route::post('thanhvien/dang_ky_proccess','ThanhVienController@dang_ky_proccess');
 //
 Route::get('text/add','TextController@khac_nhau');
-
-//thay doi ngon ngu mac dinh
-Route::get('locale/set/{lang_code}','LocaleController@set');
 
 //san pham
 Route::get('sanpham/all','SanPhamController@all');
@@ -162,3 +138,13 @@ Route::get('sach_nxb/edit/{id}','SachNXBController@edit');
 Route::post('sach_nxb/update','SachNXBController@update');
 Route::get('btmang/tao_chuoi','BTMangController@tao_chuoi');
 Route::get('btmang/chuoi','BTMangController@chuoi');
+
+Route::get('locale/set','LocaleController@set');
+
+//cart
+Route::post('cart/add_to_cart','CartController@add_to_cart');
+Route::get('cart/index','CartController@index');
+Route::get('cart/delete_all_cart','CartController@delete_all_cart');
+Route::get('/', 'ProductController@index'); 
+Route::get('cart', 'ProductController@cart'); 
+Route::get('add-to-cart/{id}', 'ProductController@addToCart');

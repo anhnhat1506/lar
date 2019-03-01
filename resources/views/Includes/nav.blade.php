@@ -8,7 +8,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{url('/')}}">TMDT</a>
+            <a class="navbar-brand" href="{{url('/')}}">{{ __('app.page_name') }}</a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -17,8 +17,8 @@
                 <li><a href="{{ url('product/get_all') }}">Product</a></li>
                 <li><a href="{{ url('category/get_cate') }}">Category</a></li>
                 <li><a href="{{ url('brand/get_brand') }}">Brand</a></li>
-                <li><a href="{{ url('locale/set/en') }}">en</a></li>
-                <li><a href="{{ url('locale/set/vn') }}">vn</a></li>
+                <li><a href="{{ url('locale/set?locale=en') }}">en</a></li>
+                <li><a href="{{ url('locale/set?locale=vn') }}">vn</a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <div class="form-group">

@@ -7,9 +7,10 @@ use Illuminate\Support\Facades\App;
 class LocaleController extends Controller
 {
     //
-    public function set($lang_code){
-        //lang_code (en/vn)
-        App::setLocale($lang_code);
+    public function set(Request $request){
+        //$request->get("locale") la gia tri en/vn
+        $en_or_vn = $request->get("locale");
+        session()->put('locale',$en_or_vn);
         return redirect("/");
     }
 }

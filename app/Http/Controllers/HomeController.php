@@ -40,9 +40,10 @@ class HomeController extends Controller
         }
     }*/
     public function index(){
-        echo "<pre>";
+       /* echo "<pre>";
         var_dump(session()->all());
-        echo "</pre>";
+        echo "</pre>";*/
+       return View('Home.index');
     }
     public function set_up_user($user_id,$email,$role){
         $newuser=[
