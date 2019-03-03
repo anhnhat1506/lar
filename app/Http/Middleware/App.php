@@ -17,7 +17,7 @@ class App
      */
     public function handle($request, Closure $next)
     {
-        echo "App middleware viet theo before!!!!";
+        //echo "App middleware viet theo before!!!!";
   
         //kiểm tra nếu chưa có session locale en/vn thì set
         if(!session()->has('locale')){
